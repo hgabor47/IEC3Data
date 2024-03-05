@@ -1,0 +1,17 @@
+{
+    "konyvek": [
+      {"konyvkod": "K001", "szerzo": "J.K. Rowling", "konyvcim": "Harry Potter és a bölcsek köve", "ev": 1997, "formatum": "papir"},
+      {"konyvkod": "K002", "szerzo": "J.R.R. Tolkien", "konyvcim": "A Gyűrűk Ura", "ev": 1954, "formatum": "digitalis"},
+      {"konyvkod": "K003", "szerzo": "George Orwell", "konyvcim": "1984", "ev": 1949, "formatum": "papir"},
+      {"konyvkod": "K004", "szerzo": "Harper Lee", "konyvcim": "Ne bántsátok a feketerigót!", "ev": 1960, "formatum": "digitalis"},
+      {"konyvkod": "K005", "szerzo": "Gabriel García Márquez", "konyvcim": "Száz év magány", "ev": 1967, "formatum": "papir"},
+      {"konyvkod": "K006", "szerzo": "F. Scott Fitzgerald", "konyvcim": "A nagy Gatsby", "ev": 1925, "formatum": "digitalis"},
+      {"konyvkod": "K007", "szerzo": "Leo Tolstoy", "konyvcim": "Háború és béke", "ev": 1869, "formatum": "papir"},
+      {"konyvkod": "K008", "szerzo": "Herman Melville", "konyvcim": "Moby Dick", "ev": 1851, "formatum": "digitalis"},
+      {"konyvkod": "K009", "szerzo": "Jane Austen", "konyvcim": "Büszkeség és balítélet", "ev": 1813, "formatum": "papir"},
+      {"konyvkod": "K010", "szerzo": "Mark Twain", "konyvcim": "Tom Sawyer kalandjai", "ev": 1876, "formatum": "digitalis"},
+      {"konyvkod": "K011", "szerzo": "Charles Dickens", "konyvcim": "Karácsonyi ének", "ev": 1843, "formatum": "papir"},
+      {"konyvkod": "K012", "szerzo": "Antoine de Saint-Exupéry", "konyvcim": "A kis herceg", "ev": 1943, "formatum": "digitalis"}
+    ]
+  }
+  
