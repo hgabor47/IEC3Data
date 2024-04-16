@@ -33,6 +33,9 @@
     <a id="konyvlista"  loggedin class="nav-link" style="display: none;" onclick="booklist()">Könyvlista</a>
   </li>
   <li class="nav-item">
+    <a id="classpelda"  loggedin class="nav-link" style="display: none;" onclick="classpelda()">Osztálypélda</a>
+  </li>
+  <li class="nav-item">
     <a id="menulogout"  loggedin class="nav-link" style="display: none;" onclick="logout()">Kilépés</a>
   </li>
 </ul>
@@ -260,6 +263,73 @@
         });
         div.innerHTML = s;
     }
+
+    //CLASSPELDA
+
+    class TMotor {
+        #tipus;
+
+        constructor(tipus) {
+            this.#tipus = tipus;
+        }
+
+        getTipus() {
+            return this.#tipus;
+        }
+    }
+
+    class TAuto {
+        marka;
+        modell;
+        motor;
+
+        constructor(marka, modell, motorTipus) {
+            this.marka = marka;
+            this.modell = modell;
+            this.motor = new TMotor(motorTipus);
+        }
+
+        leiras() {
+            return `${this.marka} ${this.modell} Motor típus: ${this.motor.getTipus()}`;
+        }
+    }
+
+    class TAutopark {
+        autok=[];
+
+        autoHozzaad(auto) {
+            this.autok.push(auto);
+        }
+
+        autokListazasa() {
+            return this.autok.map(auto => auto.leiras());
+        }
+    }
+
+    function classpelda() {
+
+        // Autók létrehozása és hozzáadása az autoparkhoz
+        const autopark = new TAutopark();
+        autopark.autoHozzaad(new TAuto("Toyota", "Corolla", "benzin"));
+        autopark.autoHozzaad(new TAuto("Ford", "Focus", "dízel"));
+        autopark.autoHozzaad(new TAuto("Honda", "Civic", "hibrid"));
+        autopark.autoHozzaad(new TAuto("Tesla", "Model S", "elektromos"));
+        autopark.autoHozzaad(new TAuto("Nissan", "Leaf", "elektromos"));
+        autopark.autoHozzaad(new TAuto("BMW", "320i", "benzin"));
+        autopark.autoHozzaad(new TAuto("Mercedes", "C Class", "dízel"));
+        autopark.autoHozzaad(new TAuto("Audi", "A4", "benzin"));
+        autopark.autoHozzaad(new TAuto("Volkswagen", "Golf", "dízel"));
+        autopark.autoHozzaad(new TAuto("Hyundai", "Ioniq", "elektromos"));
+
+        // HTML oldalon való megjelenítés
+        const listaElem = document.getElementById("content");
+        autopark.autokListazasa().forEach(leiras => {
+            const li = document.createElement('li');
+            li.textContent = leiras;
+            listaElem.appendChild(li);
+        });    
+    }
+
 
 </script>
 
