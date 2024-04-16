@@ -164,9 +164,13 @@
         const pwd2 = $('regpassword2');
 
         if (pwd1.value != pwd2.value) {
-            alert("A jelszavak nem egyeznek")
+            alert("A jelszavak nem egyeznek");
+            return
         }
         // további megkötések a jelszóra: hossza minimum, tartalma minimum 
+        if (!validatePassword(pwd1.value)) {
+            return; 
+        }        
 
         let responsejson = await runAuth('reg',username.value,pwd1.value);
         let response = JSON.parse(responsejson); 
@@ -191,6 +195,38 @@
         );
         return await response.text();
     }
+
+    function validatePassword(password) {
+        const minLength = 8;
+        const hasNumber = /\d/;
+        const hasUpper = /[A-Z]/;
+        const hasLower = /[a-z]/;
+        const hasSpecial = /[\^$*.\[\]{}()?"!@#%&\/,><\':;|_~`\\-]/;
+
+        if (password.length < minLength) {
+            alert('A jelszó túl rövid. Legalább 8 karakter hosszúnak kell lennie.');
+            return false;
+        }
+        if (!hasNumber.test(password)) {
+            alert('A jelszónak tartalmaznia kell számot.');
+            return false;
+        }
+        if (!hasUpper.test(password)) {
+            alert('A jelszónak tartalmaznia kell nagybetűt.');
+            return false;
+        }
+        if (!hasLower.test(password)) {
+            alert('A jelszónak tartalmaznia kell kisbetűt.');
+            return false;
+        }
+        if (!hasSpecial.test(password)) {
+            alert('A jelszónak tartalmaznia kell speciális karaktert.');
+            return false;
+        }
+        return true;
+    }
+
+
 
     // BOOKLIST
 
