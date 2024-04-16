@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "szerepkor": "színész"
+    },
+    {
+      "id": 2,
+      "szerepkor": "rendező"
+    },
+    {
+      "id": 3,
+      "szerepkor": "forgatókönyvíró"
+    },
+    {
+      "id": 4,
+      "szerepkor": "operatőr"
+    },
+    {
+      "id": 5,
+      "szerepkor": "producer"
+    }
+  ]
+  

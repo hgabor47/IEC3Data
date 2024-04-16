@@ -1,0 +1,243 @@
+[
+    {
+      "id": 1,
+      "film_id": 1,
+      "szemely_id": 10,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 2,
+      "film_id": 1,
+      "szemely_id": 11,
+      "szerepkor_id": 2
+    },
+    {
+      "id": 3,
+      "film_id": 1,
+      "szemely_id": 12,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 4,
+      "film_id": 1,
+      "szemely_id": 13,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 5,
+      "film_id": 2,
+      "szemely_id": 1,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 6,
+      "film_id": 2,
+      "szemely_id": 14,
+      "szerepkor_id": 2
+    },
+    {
+      "id": 7,
+      "film_id": 2,
+      "szemely_id": 15,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 8,
+      "film_id": 2,
+      "szemely_id": 16,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 9,
+      "film_id": 3,
+      "szemely_id": 2,
+      "szerepkor_id": 2
+    },
+    {
+      "id": 10,
+      "film_id": 3,
+      "szemely_id": 17,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 11,
+      "film_id": 3,
+      "szemely_id": 18,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 12,
+      "film_id": 3,
+      "szemely_id": 19,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 13,
+      "film_id": 4,
+      "szemely_id": 3,
+      "szerepkor_id": 2
+    },
+    {
+      "id": 14,
+      "film_id": 4,
+      "szemely_id": 20,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 15,
+      "film_id": 4,
+      "szemely_id": 21,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 16,
+      "film_id": 4,
+      "szemely_id": 22,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 17,
+      "film_id": 5,
+      "szemely_id": 4,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 18,
+      "film_id": 5,
+      "szemely_id": 2,
+      "szerepkor_id": 2
+    },
+    {
+      "id": 19,
+      "film_id": 5,
+      "szemely_id": 24,
+      "szerepkor_id": 1
+    },
+    {
+      "id": 20,
+      "film_id": 5,
+      "szemely_id": 25,
+      "szerepkor_id": 1
+    },
+    {
+        "id": 21,
+        "film_id": 6,
+        "szemely_id": 5,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 22,
+        "film_id": 6,
+        "szemely_id": 26,
+        "szerepkor_id": 2 
+      },
+      {
+        "id": 23,
+        "film_id": 6,
+        "szemely_id": 27,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 24,
+        "film_id": 6,
+        "szemely_id": 28,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 25,
+        "film_id": 7,
+        "szemely_id": 6,
+        "szerepkor_id": 2 
+      },
+      {
+        "id": 26,
+        "film_id": 7,
+        "szemely_id": 29,
+        "szerepkor_id": 1
+      },
+      {
+        "id": 27,
+        "film_id": 7,
+        "szemely_id": 30,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 28,
+        "film_id": 7,
+        "szemely_id": 31,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 29,
+        "film_id": 8,
+        "szemely_id": 7,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 30,
+        "film_id": 8,
+        "szemely_id": 32,
+        "szerepkor_id": 2 
+      },
+      {
+        "id": 31,
+        "film_id": 8,
+        "szemely_id": 33,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 32,
+        "film_id": 8,
+        "szemely_id": 34,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 33,
+        "film_id": 9,
+        "szemely_id": 8,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 34,
+        "film_id": 9,
+        "szemely_id": 14,
+        "szerepkor_id": 2 
+      },
+      {
+        "id": 35,
+        "film_id": 9,
+        "szemely_id": 36,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 36,
+        "film_id": 9,
+        "szemely_id": 37,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 37,
+        "film_id": 10,
+        "szemely_id": 9,
+        "szerepkor_id": 1
+      },
+      {
+        "id": 38,
+        "film_id": 10,
+        "szemely_id": 38,
+        "szerepkor_id": 2 
+      },
+      {
+        "id": 39,
+        "film_id": 10,
+        "szemely_id": 39,
+        "szerepkor_id": 1 
+      },
+      {
+        "id": 40,
+        "film_id": 10,
+        "szemely_id": 40,
+        "szerepkor_id": 1 
+      } 
+  ]
+  
