@@ -168,6 +168,7 @@
 
         if (pwd1.value != pwd2.value) {
             alert("A jelszavak nem egyeznek")
+            return
         }
         // további megkötések a jelszóra: hossza minimum, tartalma minimum 
 
