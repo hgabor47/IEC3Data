@@ -34,7 +34,7 @@
   </li>
   <li class="nav-item">
     <a id="classpelda"  loggedin class="nav-link" style="display: none;" onclick="classpelda()">Osztálypélda</a>
-  </li>
+  </li>  
   <li class="nav-item">
     <a id="menulogout"  loggedin class="nav-link" style="display: none;" onclick="logout()">Kilépés</a>
   </li>
@@ -167,13 +167,9 @@
         const pwd2 = $('regpassword2');
 
         if (pwd1.value != pwd2.value) {
-            alert("A jelszavak nem egyeznek");
-            return
+            alert("A jelszavak nem egyeznek")
         }
         // további megkötések a jelszóra: hossza minimum, tartalma minimum 
-        if (!validatePassword(pwd1.value)) {
-            return; 
-        }        
 
         let responsejson = await runAuth('reg',username.value,pwd1.value);
         let response = JSON.parse(responsejson); 
@@ -198,38 +194,6 @@
         );
         return await response.text();
     }
-
-    function validatePassword(password) {
-        const minLength = 8;
-        const hasNumber = /\d/;
-        const hasUpper = /[A-Z]/;
-        const hasLower = /[a-z]/;
-        const hasSpecial = /[\^$*.\[\]{}()?"!@#%&\/,><\':;|_~`\\-]/;
-
-        if (password.length < minLength) {
-            alert('A jelszó túl rövid. Legalább 8 karakter hosszúnak kell lennie.');
-            return false;
-        }
-        if (!hasNumber.test(password)) {
-            alert('A jelszónak tartalmaznia kell számot.');
-            return false;
-        }
-        if (!hasUpper.test(password)) {
-            alert('A jelszónak tartalmaznia kell nagybetűt.');
-            return false;
-        }
-        if (!hasLower.test(password)) {
-            alert('A jelszónak tartalmaznia kell kisbetűt.');
-            return false;
-        }
-        if (!hasSpecial.test(password)) {
-            alert('A jelszónak tartalmaznia kell speciális karaktert.');
-            return false;
-        }
-        return true;
-    }
-
-
 
     // BOOKLIST
 
@@ -264,16 +228,15 @@
         div.innerHTML = s;
     }
 
+
     //CLASSPELDA
 
     class TMotor {
         #tipus;
-
-        constructor(tipus) {
-            this.#tipus = tipus;
+        constructor(tipus){
+            this.#tipus=tipus;
         }
-
-        getTipus() {
+        gettipus(){
             return this.#tipus;
         }
     }
@@ -282,53 +245,57 @@
         marka;
         modell;
         motor;
-
-        constructor(marka, modell, motorTipus) {
-            this.marka = marka;
-            this.modell = modell;
-            this.motor = new TMotor(motorTipus);
+        constructor(marka,modell,motortipus){
+            this.marka=marka;
+            this.modell=modell;
+            this.motor = new TMotor(motortipus);     
         }
 
         leiras() {
-            return `${this.marka} ${this.modell} Motor típus: ${this.motor.getTipus()}`;
+            return `${this.marka} ${this.modell} Motor típusa: ${this.motor.gettipus()}`; 
+            //return this.marka + ' ' + this.modell + ' Motor típusa: ' + this.motor.gettipus();
         }
     }
 
     class TAutopark {
-        autok=[];
+        autok = [];
 
-        autoHozzaad(auto) {
+        autoadd(auto){
             this.autok.push(auto);
         }
 
-        autokListazasa() {
-            return this.autok.map(auto => auto.leiras());
+        listaz(){
+            return this.autok.map(  auto => auto.leiras()   );
         }
     }
 
-    function classpelda() {
 
-        // Autók létrehozása és hozzáadása az autoparkhoz
+    function classpelda(){
         const autopark = new TAutopark();
-        autopark.autoHozzaad(new TAuto("Toyota", "Corolla", "benzin"));
-        autopark.autoHozzaad(new TAuto("Ford", "Focus", "dízel"));
-        autopark.autoHozzaad(new TAuto("Honda", "Civic", "hibrid"));
-        autopark.autoHozzaad(new TAuto("Tesla", "Model S", "elektromos"));
-        autopark.autoHozzaad(new TAuto("Nissan", "Leaf", "elektromos"));
-        autopark.autoHozzaad(new TAuto("BMW", "320i", "benzin"));
-        autopark.autoHozzaad(new TAuto("Mercedes", "C Class", "dízel"));
-        autopark.autoHozzaad(new TAuto("Audi", "A4", "benzin"));
-        autopark.autoHozzaad(new TAuto("Volkswagen", "Golf", "dízel"));
-        autopark.autoHozzaad(new TAuto("Hyundai", "Ioniq", "elektromos"));
 
-        // HTML oldalon való megjelenítés
-        const listaElem = document.getElementById("content");
-        autopark.autokListazasa().forEach(leiras => {
+        autopark.autoadd( new TAuto('Audi','A4','benzin') );
+        autopark.autoadd( new TAuto('Toyota','Corolla','benzin') );
+        autopark.autoadd( new TAuto('Ford','Focus','dízel') );
+        autopark.autoadd( new TAuto('Tesla','Model S','elektromos') );
+        autopark.autoadd( new TAuto('BMW','320i','benzin') );
+        autopark.autoadd( new TAuto('Hyundai','Ioniq','elektromos') );
+        autopark.autoadd( new TAuto('Nissan','Leaf','elektromos') );
+
+        let elem = document.getElementById("content");
+        elem.innerText='';
+        t = autopark.listaz(); 
+
+        t.forEach( leiras => {
             const li = document.createElement('li');
             li.textContent = leiras;
-            listaElem.appendChild(li);
-        });    
+            elem.appendChild(li);
+        } );
+
+
     }
+
+
+
 
 
 </script>

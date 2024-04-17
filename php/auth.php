@@ -21,7 +21,11 @@
                 $username = $_POST['username'] ?? '' ;
                 $password = $_POST['password'] ?? '' ;
                 
-                echo json_encode(registerUser($username,$password));
+                if ( registerUser($username,$password) ){
+                    echo json_encode(['success'=>true,'message'=>'Sikeres regisztráció']);
+                } else {
+                    echo json_encode(['success'=>false,'message'=>'Sikertelen regisztráció']);
+                }
                 
                 break ;
             case 'logout':
@@ -33,20 +37,14 @@
     }
 
     function registerUser($username,$password){
-        $passwordValidation = validatePassword($password);
-        if (!$passwordValidation['success']) {
-            return $passwordValidation;
-        }
-
         if ( findUserByUsername($username) ) {
-            return ['success' => false, 'message' => 'Ez a felhasználónév már foglalt.'];
+            return false;
         } 
         $users = loadUsers(); // [  ...  ]   {username,password}
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $users[] = ['username' => $username, 'password' => $hashedPassword];
+        $users[] = ['username' => $username, 'password' => $password];
         saveUsers($users);
         $_SESSION['loggedinuser']=$username;
-        return ['success' => true];
+        return true;
     }
 
     function saveUsers( $users ) {
@@ -75,7 +73,7 @@
 
     function loginUser($username,$password){
         $user = findUserByUsername($username);
-        if ( $user && password_verify($password, $user['password']) ) {
+        if ( $user && $user['password']===$password ) {
             $_SESSION['loggedinuser']=$username;
             return true;
         }
@@ -85,27 +83,4 @@
     function logoutUser(){
         unset($_SESSION['loggedinuser']);
     }
-
-
-    function validatePassword($password) {
-        $minLength = 8;
-        if (strlen($password) < $minLength) {
-            return ['success' => false, 'message' => 'A jelszó túl rövid. Legalább 8 karakter hosszúnak kell lennie.'];
-        }
-        if (!preg_match('/\d/', $password)) {
-            return ['success' => false, 'message' => 'A jelszónak tartalmaznia kell számot.'];
-        }
-        if (!preg_match('/[A-Z]/', $password)) {
-            return ['success' => false, 'message' => 'A jelszónak tartalmaznia kell nagybetűt.'];
-        }
-        if (!preg_match('/[a-z]/', $password)) {
-            return ['success' => false, 'message' => 'A jelszónak tartalmaznia kell kisbetűt.'];
-        }
-        if (!preg_match('/[\^$*.\[\]{}()?"!@#%&\/,><\':;|_~`\\-]/', $password)) {
-            return ['success' => false, 'message' => 'A jelszónak tartalmaznia kell speciális karaktert.'];
-        }
-        return ['success' => true];
-    }
-    
-    
 ?>
